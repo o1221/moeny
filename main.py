@@ -100,19 +100,19 @@ def main():
                 running = False
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
-                    if changeX != 20:
+                    if changeX != 20 or body_nums == 1:
                         changeX = -20
                         changeY = 0
                 elif event.key == pygame.K_RIGHT:
-                    if changeX != -20:
+                    if changeX != -20 or body_nums == 1:
                         changeX = 20
                         changeY = 0
                 elif event.key == pygame.K_UP:
-                    if changeY != 20:
+                    if changeY != 20 or body_nums == 1:
                         changeY = -20
                         changeX = 0
                 elif event.key == pygame.K_DOWN:
-                    if changeY != 20:
+                    if changeY != -20 or body_nums == 1:
                         changeY = 20
                         changeX = 0
                 movement = True

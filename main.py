@@ -16,6 +16,7 @@ score = 0
 pygame.font.init()
 font = pygame.font.Font(None, 30)
 apple_img = pygame.image.load("snake_game/apple.png")
+running = True
 
 
 class Player:
@@ -34,15 +35,15 @@ class Player:
     def movement():
         global playerX
         global playerY
-        global body_positions
+        global body_positions, running
         if playerX < 0:
-            playerX = 581
+            running = False
         if playerX > 581:
-            playerX = 1
+            running = False
         if playerY < 0:
-            playerY = 581
+            running = False
         if playerY > 581:
-            playerY = 1
+            running = False
         if body_nums > (len(body_positions)):
             body_positions.append((playerX, playerY))
         else:
@@ -90,8 +91,7 @@ body_start = Player(playerX, playerY)
 
 
 def main():
-    global changeY, changeX, playerX, playerY
-    running = True
+    global changeY, changeX, playerX, playerY, running
     movement = False
     while running:
         screen.fill((0, 0, 0))

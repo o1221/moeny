@@ -100,17 +100,21 @@ def main():
                 running = False
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
-                    changeX = -20
-                    changeY = 0
+                    if changeX != 20:
+                        changeX = -20
+                        changeY = 0
                 elif event.key == pygame.K_RIGHT:
-                    changeX = 20
-                    changeY = 0
+                    if changeX != -20:
+                        changeX = 20
+                        changeY = 0
                 elif event.key == pygame.K_UP:
-                    changeY = -20
-                    changeX = 0
+                    if changeY != 20:
+                        changeY = -20
+                        changeX = 0
                 elif event.key == pygame.K_DOWN:
-                    changeY = 20
-                    changeX = 0
+                    if changeY != 20:
+                        changeY = 20
+                        changeX = 0
                 movement = True
         apple.display()
         body_start.display()
